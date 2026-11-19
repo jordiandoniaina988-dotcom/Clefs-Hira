@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)">
 <title>Cléfs Hira</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,7 +23,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 h1{font-family:var(--serif);font-size:26px;margin:0;letter-spacing:-.3px}
 h1 small{display:block;font:600 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:6px}
 .seg{display:flex;background:var(--line);border-radius:999px;padding:3px}
-.seg button{display:inline-flex;align-items:center;gap:6px;border:0;background:none;color:var(--mut);font:600 13px var(--sans);padding:8px 14px;border-radius:999px}
+.seg button{display:inline-flex;align-items:center;gap:6px;border:0;background:none;color:var(--mut);font:600 13px var(--sans);padding:10px 16px;border-radius:999px}
 .seg button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.12)}
 .search{margin-top:20px;display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 16px}
 .search input{flex:1;border:0;background:none;color:var(--ink);font:500 16px var(--sans);padding:16px 0;outline:0;min-width:0}
@@ -100,7 +102,7 @@ var P={search:'<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',pencil
 function ic(n,s){return'<svg class="ic" viewBox="0 0 24 24"'+(s?' style="width:'+s+'px;height:'+s+'px"':'')+'>'+P[n]+'</svg>'}
 function $(i){return document.getElementById(i)}
 function render(){
-  $("seg").innerHTML='<button data-m="read" class="'+(S.mode==="read"?"on":"")+'">'+ic("book",16)+'Lecture</button><button data-m="edit" class="'+(S.mode==="edit"?"on":"")+'">'+ic("pencil",16)+'Édition</button>';
+  $("seg").innerHTML='<button data-m="read" class="'+(S.mode==="read"?"on":"")+'" aria-label="Lecture" title="Lecture">'+ic("book",20)+'</button><button data-m="edit" class="'+(S.mode==="edit"?"on":"")+'" aria-label="Édition" title="Édition">'+ic("pencil",20)+'</button>';
   var ch='<button class="chip'+(!S.key&&!S.book?' on':'')+'" data-a="all">Tous</button>';
   
   KEYS.forEach(function(k){ch+='<button class="chip'+(S.key===k?' on':'')+'" data-key="'+k+'">'+k+'</button>'});
