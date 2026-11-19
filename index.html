@@ -5,9 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)">
+<meta name="description" content="Liste des clés des chants Hira, en lecture ou en édition.">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Cléfs Hira">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preload" href="fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:Montserrat;font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/montserrat.woff2) format("woff2")}</style>
 <title>Cléfs Hira</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--sans:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;--serif:var(--sans);--bg:#f5f6f8;--card:#fff;--ink:#14161a;--mut:#6b7280;--line:#e8eaee;--acc:#1b5cff;--accsoft:#e8efff;--danger:#e5384a;
 --DO:#e5384a;--RE:#f08a1c;--MI:#e6b800;--FA:#1faa59;--SO:#1b8fff;--LA:#6d4aff;--SI:#d6409f;
@@ -74,9 +82,27 @@ textarea{min-height:200px;font:500 13px ui-monospace,monospace}
 .key[data-k],.big .k[data-k]{background:color-mix(in srgb,var(--c) 15%,transparent);color:var(--c)}
 .keys button[data-k]{background:color-mix(in srgb,var(--c) 15%,transparent);color:var(--c);opacity:1}
 .keys button[data-k].on{background:var(--c);color:#fff;border-color:transparent;transform:scale(1.04)}
+#splash{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 11vh) 32px calc(env(safe-area-inset-bottom,0px) + 9vh);color:#fff;text-align:center;overflow:hidden;background:#0c0a30;transition:opacity .7s ease,visibility .7s}
+#splash.out{opacity:0;visibility:hidden}
+.sp-bg{position:absolute;inset:-4%;background:url(assets/worship.jpg) center/cover no-repeat;animation:spz 8s ease-out forwards}
+.sp-ov{position:absolute;inset:0;background:linear-gradient(165deg,rgba(30,100,255,.62) 0%,rgba(100,60,230,.55) 45%,rgba(12,10,48,.94) 100%)}
+.sp-c{position:relative;display:flex;flex-direction:column;align-items:center;gap:20px;animation:spu .9s .1s both cubic-bezier(.2,.7,.2,1)}
+.sp-logo{width:88px;height:88px;border-radius:24px;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+.sp-t{font:800 42px/1.05 var(--sans);letter-spacing:-.02em;margin:0}
+.sp-s{font:600 11px var(--sans);letter-spacing:.22em;text-transform:uppercase;opacity:.85}
+.sp-b{position:relative;width:min(240px,60vw);display:flex;flex-direction:column;align-items:center;gap:14px;animation:spu .9s .3s both cubic-bezier(.2,.7,.2,1)}
+.sp-bar{width:100%;height:4px;border-radius:4px;background:rgba(255,255,255,.25);overflow:hidden}
+.sp-bar i{display:block;height:100%;width:100%;border-radius:4px;background:linear-gradient(90deg,#9db9ff,#fff);transform-origin:left;animation:spl 1.9s cubic-bezier(.4,0,.2,1) forwards}
+.sp-l{font:500 12px var(--sans);opacity:.8;letter-spacing:.04em}
+@keyframes spz{from{transform:scale(1)}to{transform:scale(1.08)}}
+@keyframes spu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes spl{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.sp-bg,.sp-c,.sp-b{animation:none}.sp-bar i{animation-duration:.01s}}
 </style>
 </head>
 <body>
+<div id="splash" role="status" aria-live="polite"><div class="sp-bg"></div><div class="sp-ov"></div><div class="sp-c"><svg class="sp-logo" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e64ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs><rect width="512" height="512" rx="115" fill="url(#lg)"/><g transform="translate(141.72 100.45) scale(317.44)" fill="#fff"><path fill-rule="evenodd" d="M0.22 0.58a0.2 0.2 0 1 0 0.0001 0zM0.22 0.695a0.085 0.085 0 1 1 -0.0001 0z"/><rect x="0.305" y="0" width="0.115" height="0.8" rx="0.05"/><rect x="0.35" y="0" width="0.35" height="0.115" rx="0.04"/><rect x="0.35" y="0.2" width="0.25" height="0.115" rx="0.04"/><rect x="0.35" y="0.4" width="0.17" height="0.115" rx="0.04"/></g></svg><h2 class="sp-t">Cléfs Hira</h2><div class="sp-s">Fihirana Pentekotista</div></div><div class="sp-b"><div class="sp-bar"><i></i></div><div class="sp-l">Chargement des chants…</div></div></div>
+
 <header>
   <div class="top">
     <h1><small>Fihirana Pentekotista</small>Cléfs Hira</h1>
@@ -154,6 +180,9 @@ document.addEventListener("click",function(e){
 });
 $("q").addEventListener("input",function(e){S.q=e.target.value;render()});
 $("sic").innerHTML=ic("search",18);load();render();
+if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}
+(function(){var s=document.getElementById("splash");if(!s)return;var t0=Date.now();function hide(){setTimeout(function(){s.classList.add("out");setTimeout(function(){s.remove()},750)},Math.max(0,1900-(Date.now()-t0)))}
+if(document.readyState==="complete")hide();else window.addEventListener("load",hide)})();
 </script>
 </body>
 </html>
