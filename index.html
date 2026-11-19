@@ -3,19 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)">
-<meta name="description" content="Liste des clés des chants Hira, en lecture ou en édition.">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Cléfs Hira">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<link rel="preload" href="fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
-<style>@font-face{font-family:Montserrat;font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/montserrat.woff2) format("woff2")}</style>
 <title>Cléfs Hira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--sans:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;--serif:var(--sans);--bg:#f5f6f8;--card:#fff;--ink:#14161a;--mut:#6b7280;--line:#e8eaee;--acc:#1b5cff;--accsoft:#e8efff;--danger:#e5384a;
 --DO:#e5384a;--RE:#f08a1c;--MI:#e6b800;--FA:#1faa59;--SO:#1b8fff;--LA:#6d4aff;--SI:#d6409f;
@@ -25,7 +15,7 @@ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:en
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans)}
 body{min-height:100vh;max-width:640px;margin:0 auto;padding-bottom:130px}
-header{position:sticky;top:0;z-index:5;background:var(--bg);padding:46px 22px 14px;border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:5;background:var(--bg);padding:28px 22px 14px;border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
 .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 h1{font-family:var(--serif);font-size:26px;margin:0;letter-spacing:-.3px}
@@ -162,7 +152,6 @@ document.addEventListener("click",function(e){
 });
 $("q").addEventListener("input",function(e){S.q=e.target.value;render()});
 $("sic").innerHTML=ic("search",18);load();render();
-if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}
 </script>
 </body>
 </html>
